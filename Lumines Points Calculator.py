@@ -1,7 +1,7 @@
 score = 0
 level = 0
 
-skinTargetSquares = [22, 16, 16, 16, 28, 16, 16, 14,
+skinQuotas = [22, 16, 16, 16, 28, 16, 16, 14,
                      26, 18, 18, 18, 18, 24, 26, 28,
                      28, 30, 32, 32, 32, 32, 32, 32]
 skinNames = ["Shinin'", "URBANIZATION", "ROUND ABOUT", "SLIPPING",
@@ -11,7 +11,7 @@ skinNames = ["Shinin'", "URBANIZATION", "ROUND ABOUT", "SLIPPING",
              "STRANGERS", "Holiday in summer", "TAKE A DOG OUT A WALK",
              "Big Elapso", "My Generation", "MEGURO", "SPIRITS",
              "Get up and Go", "FLY INTO THE SKY", "Lights"]
-skinLevelsToNewSkin = [4, 4, 4, 4, 4, 4, 4, 4,
+skinLevelupsToNewSkin = [4, 4, 4, 4, 4, 4, 4, 4,
                        4, 4, 4, 4, 4, 4, 4, 4,
                        5, 5, 5, 5, 5, 5, 5, 5]
 
@@ -26,13 +26,13 @@ def calculate_points_for_skin(skinIndex, squaresErasedOnSweep, printSkinInfo):
     
     pointsEarned = 0
     squaresErased = 0 #For quota, not total squares erased
-    targetSquaresErased = skinTargetSquares[skinIndex]
-    levelsToNewSkin = skinLevelsToNewSkin[skinIndex]
+    targetSquaresErased = skinQuotas[skinIndex]
+    levelsToNewSkin = skinLevelupsToNewSkin[skinIndex]
 
     if (printSkinInfo):
         print("Current skin: " + skinNames[skinIndex])
-        print("Squares to levelup: ", skinTargetSquares[skinIndex])
-        print("Levelups needed: ", skinLevelsToNewSkin[skinIndex])
+        print("Squares to levelup: ", skinQuotas[skinIndex])
+        print("Levelups needed: ", skinLevelupsToNewSkin[skinIndex])
         print('')
     
     while (levelsToNewSkin > 0):
@@ -54,7 +54,7 @@ def calculate_points_for_skin(skinIndex, squaresErasedOnSweep, printSkinInfo):
 #Assumes that comboStage will remain the same throughout entire run
 def calculate_points_for_run(squaresErasedPerSweep, printSkinScores, printSkinInfo):
     score = 0
-    for skinIndex in range(len(skinTargetSquares)):
+    for skinIndex in range(len(skinQuotas)):
         
         pointsScored = calculate_points_for_skin(skinIndex,
                                                  squaresErasedPerSweep,
