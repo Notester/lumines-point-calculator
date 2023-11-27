@@ -65,5 +65,3 @@ def calculate_points_for_run(squaresErasedPerSweep, printSkinScores, printSkinIn
               squaresErasedPerSweep, "squares per sweep:", pointsScored)
         score += pointsScored
     return (score)
-
-#print("Final score: ", calculate_points_for_run(4, False, False))
